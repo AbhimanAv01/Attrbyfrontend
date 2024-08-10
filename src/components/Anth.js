@@ -38,7 +38,7 @@ const Anth = () => {
         formData.append('question', question);
 
         try {
-            const res = await axios.post('http://localhost:3010/api/message', formData, {
+            const res = await axios.post('https://attryb2-backend.onrender.com/api/message', formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data'
                 }
