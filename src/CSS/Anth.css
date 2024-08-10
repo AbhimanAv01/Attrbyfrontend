@@ -1,0 +1,64 @@
+
+
+
+   .tab{
+    margin-bottom: 2vh;
+    background-color: rgb(46, 45, 45) !important;
+    border-radius: 50px !important;
+    padding: 5px 30px;
+   
+  }
+
+  .btn{
+    background-color: transparent !important;
+    border-radius: 20px !important;
+    border-color: rgb(195, 0, 255) !important;
+    
+  }
+
+  .textarea{ 
+    background-color: transparent !important;
+    color: white;
+  }
+
+  .typing-animation{
+    text-align: justify;
+    white-space: pre-wrap; /* Preserve whitespace */
+    overflow-wrap: break-word;
+  }
+  
+  .welcome-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80vh; /* Adjust the height as needed */
+}
+
+.welcome-text1{
+    background-image: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(29,52,253,1) 50%, rgba(252,69,91,1) 100%);
+  background-clip: text;
+  color: transparent;
+  font-size: 90px;
+  font-weight: 700;
+}
+.welcome-text2{
+    background-image: radial-gradient(circle, rgba(63,72,94,1) 0%, rgba(148,148,148,1) 100%);
+  background-clip: text;
+  color: transparent;
+  font-size: 40px;
+    
+}
+
+.heading-container {
+    margin-bottom: 1rem;
+}
+.heading-text {
+    font-size: 2rem; /* Larger size for 'Attrby.ai' */
+    font-weight: bold;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.sub-heading-text {
+    font-size: 0.9rem; /* Smaller size for 'powered by Claude' */
+    display: block;
+    margin-left: 5vh;
+}
