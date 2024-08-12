@@ -1,7 +1,8 @@
 /* styles.css */
 .card-hover-effect {
     transition: background-color 0.3s ease;
-    border: 2px solid rgba(190, 190, 190, 0.096) !important; 
+    border: 2px solid rgba(190, 190, 190, 0.096) !important;
+    
   }
   
   .card-hover-effect:hover {
@@ -9,3 +10,9 @@
   }
 
 
+  @media (max-width: 576px) {
+    .card-hover-effect{
+      margin-top: 0px !important; 
+    }
+
+  }
