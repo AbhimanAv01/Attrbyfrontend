@@ -40,6 +40,7 @@
   color: transparent;
   font-size: 90px;
   font-weight: 700;
+  
 }
 .welcome-text2{
     background-image: radial-gradient(circle, rgba(63,72,94,1) 0%, rgba(148,148,148,1) 100%);
@@ -61,4 +62,15 @@
     font-size: 0.9rem; /* Smaller size for 'powered by Claude' */
     display: block;
     margin-left: 5vh;
+}
+
+
+@media (max-width: 576px) {
+  .welcome-text1 {
+    margin-top: 150px;
+      font-size: 50px; /* Adjust as needed */
+  }
+  .welcome-text2 {
+      font-size: 1.25rem; /* Adjust as needed */
+  }
 }

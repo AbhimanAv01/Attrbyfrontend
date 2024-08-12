@@ -1,0 +1,11 @@
+/* styles.css */
+.card-hover-effect {
+    transition: background-color 0.3s ease;
+    border: 2px solid rgba(190, 190, 190, 0.096) !important; 
+  }
+  
+  .card-hover-effect:hover {
+    background-color: rgba(128, 128, 128, 0.178) !important;
+  }
+
+

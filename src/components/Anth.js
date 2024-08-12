@@ -5,6 +5,7 @@ import { GrAttachment } from 'react-icons/gr';
 import { MdOutlineKeyboardDoubleArrowUp } from 'react-icons/md';
 import {ReactTyped} from 'react-typed';
 import '../CSS/Anth.css';
+import CardContainer from '../components/Suggestioncard'
 
 
 const Anth = () => {
@@ -20,11 +21,6 @@ const Anth = () => {
         setFile(selectedFile);
         setFileName(selectedFile ? selectedFile.name : 'No file chosen');
     };
-
-    // useEffect(() => {
-    //     // Set default response when the component mounts
-    //     setResponse("This file appears to be a CSV (Comma-Separated Values) file containing sales data. Here's an analysis of the content:\n\n1. Columns:\n   - OrderDate: The date of the order\n   - Region: The region where the sale occurred (East, Central, West)\n   - Manager: The name of the manager responsible for the sale\n   - SalesMan: The name of the salesperson who made the sale\n   - Item: The product sold (Television, Home Theater, Cell Phone, Desk, Video Games)\n   - Units: The number of units sold in each order\n   - Unit_price: The price per unit of the product\n   - Sale_amt: The total sales amount for each order\n\n2. Data:\n   - The file contains sales records from January 6, 2018, to December 21, 2019.\n   - There are sales records for different regions, managed by different managers and salespeople.\n   - The products sold include televisions, home theaters, cell phones, desks, and video games.\n   - The unit prices vary depending on the product, with televisions being the most expensive at $1,198.00 per unit.\n   - The number of units sold in each order varies, ranging from 2 to 96 units.\n\n3. Inconsistencies:\n   - The last two rows of the file seem to be summary rows, but they are not labeled and don't follow the same format as the rest of the data.\n   - The \"Unit_price\" and \"Sale_amt\" columns contain values with inconsistent formatting (some have commas, some have spaces).\n\n4. Insights:\n   - The data could be used to analyze sales trends over time, compare sales performance across regions, managers, and salespeople, and identify the most popular and profitable products.\n   - The data could also be used to calculate total sales revenue, average order size, and other relevant metrics.\n\nTo properly work with this data, it would be necessary to clean and preprocess it, handling the inconsistencies in formatting and determining how to treat the summary rows at the end of the file. Additionally, the data types of each column should be properly parsed (e.g., converting OrderDate to a date type, Units to integer, Unit_price and Sale_amt to float or decimal types).");
-    // }, []);
 
     const handleQuestionChange = (e) => {
         setQuestion(e.target.value);
@@ -57,11 +53,17 @@ const Anth = () => {
         }
     };
 
+
+    const handleApiResponse = (responseText, errorText) => {
+        setResponse(responseText);
+        setError(errorText);
+        setLoading(false);
+    };
+
     return (
         <Container fluid className="min-vh-100 d-flex flex-column justify-content-between bg-dark text-white">
             <style>
                 {`
-               
                 .custom-placeholder::placeholder {
                     color: #686b6e;
                 }
@@ -74,7 +76,7 @@ const Anth = () => {
 
              {/* Response Display */}
              {loading && (
-                <div className="mt-3">
+                <div className="my-3 mx-auto w-100" style={{ maxWidth: '60%' }}>
                    <Spinner animation="grow" size="sm" />
                    <Spinner animation="grow" />
                 </div>
@@ -96,12 +98,14 @@ const Anth = () => {
                     </Card.Body>
                 </Card>
             ) : !loading && !response ? (
-                <div className="welcome-container">
+                <div className="welcome-container container-fluid d-flex flex-column justify-content-cent">
                 <div className="text-center">
-                    <p className="welcome-text1">Hello,Welcome </p>
-                    <p className="welcome-text2">How Can i Help You today?</p>
+                <p className="welcome-text1 ">Hello, Welcome</p>
+                <p className="welcome-text2 ">How Can I Help You Today?</p>
+                    <CardContainer onApiResponse={handleApiResponse} />
                 </div>
             </div>
+            
             ) : null}
 
             {error && (
