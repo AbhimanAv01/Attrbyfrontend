@@ -71,7 +71,7 @@ const Anth = () => {
             </style>
 
             <div className="heading-container">
-                <h4 className="heading-text">Attrby.ai<span className="sub-heading-text">powered by Claude</span></h4>
+                <h4 className="heading-text">Nitro.ai<span className="sub-heading-text">powered by Claude</span></h4>
             </div>
 
              {/* Response Display */}
